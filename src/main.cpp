@@ -110,6 +110,8 @@ void getPixColor(byte ring, byte pix, bool active, byte mode)
   pixels.setPixelColor(led_mapping[pix] + ring * 16, colourLUT[2 * mode + active]);
 }
 
+
+
 void updatePixels()
 {
   pixels.clear();
@@ -185,20 +187,6 @@ void updatePixels()
       pixels.setPixelColor(led_mapping[i - 1] + 3 * 16, (i * 8), 0, (i * 16) - 1);
     }
   }
-  
-/*
-    case 3: // div
-    {
-      for (j = 0; j < ringStates[i].loopLength; j++)
-      {
-        if (!(j % divRatio[ringStates[i].clkDiv]))
-          getPixColor(i, j, true, ringStates[i].mode);
-      }
-      break;
-    }
-*/
-//    case 4: // pan
-//      break;
   pixels.show();
 }
 
